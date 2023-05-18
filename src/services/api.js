@@ -1,6 +1,3 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { tableActions } from '../redux/reducers/tableReducer'; 
-
 const API_BASE_URL = 'http://www.filltext.com';
 
 //Малый объем данных
