@@ -11,15 +11,7 @@ export const fetchSmallDataAsync = createAsyncThunk(
   'table/fetchSmallData',
   async (rows = 32, { dispatch, rejectWithValue }) => {
     try {
-      const response = await fetchSmallData(rows);
-      if (response.status === undefined) {
-        throw new Error('Request failed: Response status is undefined');
-      }
-
-      if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}: ${response.statusText}`);
-      }
-      const data = await response.json();
+      const data = await fetchSmallData(rows);
       return data;
     } catch (error) {
       console.error('Error during data fetching:', error);
@@ -32,10 +24,7 @@ export const fetchLargeDataAsync = createAsyncThunk(
   'table/fetchLargeData',
   async (rows = 1000, { dispatch, rejectWithValue }) => {
     try {
-
-
-      const response = await fetchLargeData(rows);
-      const data = await response.json();
+      const data = await fetchLargeData(rows);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

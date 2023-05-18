@@ -6,6 +6,7 @@ import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 import TablePagination from './TablePagination/TablePagination';
 import TableFilter from './TableFilter/TableFilter'; 
+import AddRowForm from './AddRowForm/AddRowForm';
 
 const Table = () => {
   const dispatch = useDispatch();
@@ -16,13 +17,13 @@ const Table = () => {
     dispatch(fetchLargeDataAsync()); // Загрузка большого объема данных
   }, [dispatch]);
 
-  /*if (loading) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
   if (error) {
     return <div>Error: {error}</div>;
-  }*/
+  }
 
   // Загрузка данных большого объема
   const handleLoadLargeData = () => {
@@ -38,6 +39,7 @@ const Table = () => {
 
   return (
     <div>
+      <AddRowForm />
       <TableFilter />
       <table>
         <TableHeader />

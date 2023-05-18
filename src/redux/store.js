@@ -7,6 +7,8 @@ const store = configureStore({
   reducer: {
     table: tableReducer,
   },
+  devTools: true,
+  
   middleware: [thunk],
 });
 
